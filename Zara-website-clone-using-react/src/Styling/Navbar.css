@@ -1,0 +1,54 @@
+
+.main-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.nav-logo{
+  
+    text-align: center;
+}
+.zara-logo{
+  
+    width: 100%;
+}
+.search-box{
+   
+    width: 95%;
+    height: 30px;
+    text-align: end;
+    padding: 5px;
+    background-color: black;
+}
+.main-container1{
+
+    width: 3%;
+}
+.main-container2{
+  
+    width: 30%;
+  margin-left: -2%;
+}
+.main-container3{
+    
+    width: 30%;
+  text-align: center;
+  padding-top: 3%;
+  margin-left: 10%;
+}
+.main-container4{
+
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1%;
+}
+.link-tags{
+
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 13px;
+}
