@@ -3,11 +3,21 @@ import "../Styling/Navbar.css"
 import Help from "../NavItems/Help"
 import ShoppingBag from "../NavItems/ShoppingBag"
 import RegisterPage from "./RegisterPage"
-import { useContext } from "react"
+import { useContext,useState } from "react"
 import { AuthContext } from "../Context/AuthContext"
 function LoginRoute(){
     document.title="LOG IN / CREATE ACCOUNT - ZARA India"
-   let {register,setRegister}=useContext(AuthContext)
+   let {register,setRegister,login}=useContext(AuthContext)
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+
+   function handleLogin(){
+    if(login(email,password)){
+      alert("Login Successfully : YOU CAN SHOP")
+    }else{
+      alert("Invalid email and password !!! Please try again !!!")
+    }
+   }
   if(register){
     return (<RegisterPage/>)
   }
@@ -33,12 +43,14 @@ function LoginRoute(){
     </div>
 
 
-<div className="login-container">
+    <div className="login-container">
   <div className="sub-login-container">
     <p className="login-title">LOG IN TO YOUR ACCOUNT</p>
-    <input type="email" name="" id=""  placeholder="E-MAIL" required className="inputfields"/> <br />
-    <input type="password" name="" id="" placeholder="PASSWORD" required  className="inputfields"/>
-   <button className="button-in-login-page">Login</button>
+   <form action="" onSubmit={handleLogin}>
+   <input type="email" placeholder="E-MAIL" required className="inputfields" value={email} onChange={(e)=>setEmail(e.target.value)}/> <br />
+    <input type="password" placeholder="PASSWORD" required  className="inputfields" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+   <button className="button-in-login-page" type="submit">Login</button>
+   </form>
    <p className="forget-password">Have you forgotten your password?</p>
   </div>
   <div>

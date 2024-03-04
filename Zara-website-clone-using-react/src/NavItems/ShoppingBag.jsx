@@ -1,6 +1,6 @@
 function ShoppingBag(){
     return <>
-    <h1>ShoppingBag page</h1>
+    <h1 style={{color:"blue",paddingTop:"30%",textAlign:"center"}}>ShoppingBag page</h1>
     </>
 }
 export default ShoppingBag
