@@ -1,14 +1,16 @@
-import { Route, Routes,Link } from "react-router-dom"
+import { Route, Routes,Link, useNavigate } from "react-router-dom"
 import "../Styling/Navbar.css"
-import Login from "../NavItems/Login"
 import Help from "../NavItems/Help"
 import ShoppingBag from "../NavItems/ShoppingBag"
-import Navbar1 from "./Navbar1"
-import LoginRoute from "./LoginRoute"
-import { AuthContext } from "../Context/AuthContext"
+import RegisterPage from "./RegisterPage"
 import { useContext } from "react"
-function Navbar(){
-    let {isRender,setIsRender}=useContext(AuthContext)
+import { AuthContext } from "../Context/AuthContext"
+function LoginRoute(){
+    document.title="LOG IN / CREATE ACCOUNT - ZARA India"
+   let {register,setRegister}=useContext(AuthContext)
+  if(register){
+    return (<RegisterPage/>)
+  }
     return <>
     <div className="main-container">
 
@@ -24,24 +26,38 @@ function Navbar(){
             </div>
 
             <div  className="main-container4">
-          
-                <Link to="/login" className="link-tags"onClick={()=>setIsRender(true)}>LOG IN</Link>
-               
                     <Link to="/help-center" className="link-tags">HELP</Link>   
                 <Link to="/shop/cart" className="link-tags">SHOPPING BAG(0)</Link>
                
             </div>
-
     </div>
-    
 
+
+<div className="login-container">
+  <div className="sub-login-container">
+    <p className="login-title">LOG IN TO YOUR ACCOUNT</p>
+    <input type="email" name="" id=""  placeholder="E-MAIL" required className="inputfields"/> <br />
+    <input type="password" name="" id="" placeholder="PASSWORD" required  className="inputfields"/>
+   <button className="button-in-login-page">Login</button>
+   <p className="forget-password">Have you forgotten your password?</p>
+  </div>
+  <div>
+  <p className="login-title">NEED AN ACCOUNT?</p>
+ <button  className="button-in-login-page" onClick={()=>setRegister(true)}>REGISTER</button>
+  </div>
+</div>
+    
+<div>
+   
+</div>
   <Routes>
-        <Route path="/login" element={<Login/>}/>
+       
         <Route path="/help-center" element={<Help/>}/>
         <Route path="/shop/cart" element={<ShoppingBag/>}/>
+        
     </Routes>
  
 
     </>
 }
-export default Navbar
+export default LoginRoute

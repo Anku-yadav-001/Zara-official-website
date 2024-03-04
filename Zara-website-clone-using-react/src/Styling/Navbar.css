@@ -21,19 +21,16 @@
     height: 30px;
     text-align: end;
     padding: 5px;
-    background-color: black;
+    background-color: white;
 }
 .main-container1{
-
     width: 3%;
 }
 .main-container2{
+    width: 25%;
   
-    width: 30%;
-  margin-left: -2%;
 }
 .main-container3{
-    
     width: 30%;
   text-align: center;
   padding-top: 3%;
@@ -51,4 +48,58 @@
     text-decoration: none;
     font-family: sans-serif;
     font-size: 13px;
+}
+
+.nav1-main-container{
+    position: absolute;
+    z-index: 1;
+   display: flex;
+   justify-content: space-between;
+  
+}
+.sub-division{
+    display: flex;
+    justify-content:space-evenly;
+    margin: 60% 40%;
+    
+}
+.sub-division div{
+    padding: 8px 17px;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.login-container{
+   display: flex;
+   justify-content: space-evenly;
+  padding-top: 15%;
+}
+.login-container div{
+    width: 40%;
+}
+
+.inputfields{
+    font-family: sans-serif;
+    font-size: 12px;
+    border: 2px solid gray;
+    width: 90%;
+    height: 32px;
+    padding: 5px;
+    margin: 10px;
+   
+}
+.login-title{
+    padding: 5px;
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.button-in-login-page{
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 10px 43%;
+}
+.forget-password{
+    font-size: 10px;
+    font-family: sans-serif;
+    margin: 13px;
 }
